@@ -6,10 +6,15 @@ const readline = require('readline').createInterface({
 
   readline.question(`Plz enter the length of password : `, password_length => {
   readline.close()
+       if(!isNaN(password_length)){
          var password = "";
            for(var i = 0; i < password_length; i++){
            var randomNumber = Math.floor(Math.random()*chars.length);
            password += chars.substring(randomNumber, randomNumber+1);
-       }
-console.log(password);
+    }
+  console.log(password);
+ } else {
+  console.log("Please input a number !");
+  return;
+}
 })
